@@ -1,0 +1,74 @@
+.\" Manpage for internsctl
+.TH internsctl 1 "January 2024" "v0.1.0" "internsctl manual"
+
+.SH NAME
+internsctl \- Manage interns
+
+.SH SYNOPSIS
+.B internsctl
+.I command
+[\fIOPTIONS\fR] [\fIARGUMENTS\fR]
+
+.SH DESCRIPTION
+The \fBinternsctl\fR command is used to manage interns.
+
+.SH COMMANDS
+.TP
+.B cpu getinfo
+Get CPU information.
+
+.TP
+.B memory getinfo
+Get memory information.
+
+.TP
+.B user create \fI<username>\fR
+Create a new user.
+
+.TP
+.B user list [\fR\fB--sudo-only\fR]
+List users on the system.
+
+.TP
+.B file getinfo [\fR\fB--size\fR] [\fR\fB--permissions\fR] [\fR\fB--owner\fR] [\fR\fB--last-modified\fR] \fI<file-name>\fR
+Get information about a file.
+
+.SH OPTIONS
+.TP
+.B --sudo-only
+List only users with sudo permissions.
+
+.TP
+.B --size,-s
+Print the file size.
+
+.TP
+.B --permissions,-p
+Print the file permissions.
+
+.TP
+.B --owner,-o
+Print the file owner.
+
+.TP
+.B --last-modified,m
+Print the last modified timestamp.
+
+.SH EXAMPLES
+.B internsctl cpu getinfo
+Get CPU information.
+
+.B internsctl user list --sudo-only
+List users with sudo permissions.
+
+.SH SEE ALSO
+.BR lscpu (1),
+.BR free (1),
+.BR useradd (8),
+.BR passwd (1),
+.BR stat (1)
+
+.SH AUTHOR
+Rohan Mehta
+
+.\" End of man page
